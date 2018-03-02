@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL ^ E_STRICT);
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Dotenv\Dotenv;
@@ -38,9 +39,10 @@ DMM web APIを使って遊んでみた 検索ワード：ポプテピピック
             <tbody>
                 <?php
                     foreach ($items['result']['items'] as $item) {
+                        $img_src = $item['imageURL']['small'] ?? 'https://placehold.jp/150x150.png';
                         print '<tr>';
                         print '<td>' . $item['content_id'] . '</td>';
-                        print '<td><img src="' . $item['imageURL']['small'] . '"></td>';
+                        print '<td><img src="' . $img_src . '"></td>';
                         print '<td>' . $item['title'] . '</td>';
                         print '<td><a href="' . $item['URL'] . '">' . $item['URL'] . '</a></td>';
                         print '</tr>';
