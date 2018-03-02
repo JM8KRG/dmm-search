@@ -1,0 +1,29 @@
+{
+    "name": "macaron/dmm-search",
+    "description": "introduction to DMM web api.",
+    "type": "project",
+    "require": {
+        "dmmcomlabo/dmm-sdk-v3": "^1.0",
+        "phpunit/phpunit": "^7.0",
+        "mockery/mockery": "^1.0",
+        "vlucas/phpdotenv": "^2.4",
+        "monolog/monolog": "^1.23"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "JM8KRG",
+            "email": "jm8krg@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DmmSearch\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": [
+            "php -S localhost:8000 -t public public/index.php"
+        ]
+    }
+}
